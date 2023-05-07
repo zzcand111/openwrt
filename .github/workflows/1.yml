@@ -67,14 +67,14 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-
+    
     - name: 缓存
       uses: klever1988/cachewrtbuild@main
       with:
         ccache: 'true'
         mixkey: 'acrh17_1'
-        prefix: 'openwrt'
-
+        prefix: ${{ github.workspace }}/openwrt
+        
     - name: 加载软件源
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
@@ -105,7 +105,8 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
         make dirclean
-        
+
+
     - name: 整合固件
       id: compile
       run: |
