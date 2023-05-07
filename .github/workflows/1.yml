@@ -73,7 +73,7 @@ jobs:
       with:
         ccache: 'true'
         mixkey: 'acrh17_1'
-        prefix: ${{ github.workspace }}/
+        prefix: ${{ github.workspace }}/openwrt
         
     - name: 加载软件源
       run: |
