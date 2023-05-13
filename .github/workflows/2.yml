@@ -24,7 +24,7 @@ on:
 #  - cron: 0 17 14 * *
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/WRMing1008/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: 2.config
@@ -111,7 +111,7 @@ jobs:
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
-        make -j$(nproc) || make -j1 || make -j1 V=s
+        make -j$(nproc) || make -j1 V=99
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: 检查可用容量
@@ -150,7 +150,8 @@ jobs:
         Rtime=$(date +%Y.%m.%d-%H:%M)
         release_tag="rt-acrh17-t2-OpenWrt-$time"
         release_name="rt-acrh17-t2-OpenWrt-$Rtime"
-        echo "默认网关：192.168.100.2
+        echo "5.15 内核
+        默认网关：192.168.100.2
         默认用户名|密码：root | password" >> release.txt
         echo "release_name=$release_name" >> $GITHUB_OUTPUT
         echo "release_tag=$release_tag" >> $GITHUB_OUTPUT
