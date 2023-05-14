@@ -24,7 +24,7 @@ on:
 #  - cron: 0 17 14 * *
 
 env:
-  REPO_URL: https://github.com/WRMing1008/lede
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: 2.config
