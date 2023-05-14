@@ -149,7 +149,7 @@ jobs:
         Rtime=$(date +%Y.%m.%d-%H:%M)
         release_tag="rt-acrh17-t2-OpenWrt-$time"
         release_name="rt-acrh17-t2-OpenWrt-$Rtime"
-        echo "更新内核到5.15
+        echo "感谢immortalwrt的源码，本固件内核为5.15。
         
         简单Mesh、阿里动态域名、百度网盘、宽带提速小助手、
         Frpc内网穿透、可道云私有云盘、Bypass科学、家长控制、
