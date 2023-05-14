@@ -29,8 +29,8 @@ env:
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: 5.config
-  DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
+  DIY_P1_SH: im1.sh
+  DIY_P2_SH: im2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -131,7 +131,6 @@ jobs:
         rm -rf version.buildinfo
         sleep 2
         mv *.bin 5-ACRH17-$(date +%Y.%m.%d-%H.%M).bin
-        mv *.trx 5-ACRH17-$(date +%Y.%m.%d-%H.%M).trx
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
