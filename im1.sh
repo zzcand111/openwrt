@@ -14,7 +14,7 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
-https://github.com/ntlf9t/luci-app-easymesh.git package/luci-app-easymesh
+git clone https://github.com/ntlf9t/luci-app-easymesh.git package/luci-app-easymesh
 git clone https://github.com/Diciya/luci-app-broadbandacc.git package/luci-app-broadbandacc
 git clone https://github.com/riverscn/openwrt-iptvhelper.git package/iptvhelper
 git clone https://github.com/xiaozhuai/luci-app-filebrowser.git package/filebrowser
