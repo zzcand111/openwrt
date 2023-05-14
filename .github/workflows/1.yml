@@ -131,7 +131,6 @@ jobs:
         rm -rf version.buildinfo
         sleep 2
         mv *.bin 1-ACRH17-$(date +%Y.%m.%d-%H.%M).bin
-        mv *.trx 1-ACRH17-$(date +%Y.%m.%d-%H.%M).trx
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
