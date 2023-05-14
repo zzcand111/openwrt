@@ -111,7 +111,7 @@ jobs:
       id: compile
       run: |
         cd openwrt
-        make -j1 V=s
+        make -j2 || make -j1 V=99
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: 检查可用容量
