@@ -25,7 +25,7 @@ on:
 
 env:
 #  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_URL: https://github.com/WRMing1008/lede.git
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: 5.config
