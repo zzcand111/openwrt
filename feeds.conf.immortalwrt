@@ -1,0 +1,10 @@
+src-git packages https://github.com/immortalwrt/packages
+src-git luci https://github.com/immortalwrt/luci
+# src-git routing https://github.com/immortalwrt/routing
+src-git routing https://github.com/openwrt/routing
+src-git telephony https://git.openwrt.org/feed/telephony.git
+# src-git helloworld https://github.com/fw876/helloworld.git
+# src-git passwall https://github.com/xiaorouji/openwrt-passwall.git
+# src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git
+# src-git OpenClash https://github.com/vernesong/OpenClash.git
+# src-git bypass https://github.com/Cneupa/luci-app-bypass.git
