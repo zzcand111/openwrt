@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: ACRH17第一版
+name: ACRH17第二版
 
 on:
   repository_dispatch:
@@ -27,7 +27,7 @@ env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.immortalwrt
-  CONFIG_FILE: 1.config
+  CONFIG_FILE: 2.config
   DIY_P1_SH: im1.sh
   DIY_P2_SH: im2.sh
   UPLOAD_BIN_DIR: false
@@ -72,7 +72,7 @@ jobs:
       uses: klever1988/cachewrtbuild@main
       with:
         ccache: 'true'
-        mixkey: 'acrh17_1'
+        mixkey: 'acrh17_2'
         prefix: ${{ github.workspace }}/openwrt
         
     - name: 加载软件源
@@ -130,7 +130,7 @@ jobs:
         rm -rf sha256sums
         rm -rf version.buildinfo
         sleep 2
-        mv *.bin 1-ACRH17-$(date +%Y.%m.%d-%H.%M).bin
+        mv *.bin 2-ACRH17-$(date +%Y.%m.%d-%H.%M).bin
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
@@ -138,7 +138,7 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: asus_rt-acrh17-OpenWrt
+        name: 2asus_rt-acrh17-OpenWrt
         path: ${{ env.FIRMWARE }}
 
     - name: 生成标签
@@ -147,8 +147,8 @@ jobs:
       run: |
         time=$(date +%Y.%m.%d)
         Rtime=$(date +%Y.%m.%d-%H:%M)
-        release_tag="rt-acrh17-t1-OpenWrt-$time"
-        release_name="rt-acrh17-t1-OpenWrt-$Rtime"
+        release_tag="rt-acrh17-t2-OpenWrt-$time"
+        release_name="rt-acrh17-t2-OpenWrt-$Rtime"
         echo "更新内核到5.15
         
         简单Mesh、阿里动态域名、百度网盘、宽带提速小助手、
@@ -186,4 +186,4 @@ jobs:
       with:
          desp: 🎉华硕RT-ACRH17固件编译成功，尽情搞机吧🎉
          sendkey: ${{ secrets.sendkey }}
-         title: " ACRH17第一版高大全固件编译成功"
+         title: " ACRH17第二版高大全固件编译成功"
