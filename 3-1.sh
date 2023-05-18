@@ -12,3 +12,4 @@
 
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
+git clone https://github.com/sirpdboy/chatgpt-web.git package/luci-app-chatgpt
