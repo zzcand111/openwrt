@@ -26,9 +26,9 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  FEEDS_CONF: feeds.conf.default
+  FEEDS_CONF: 3.feeds
   CONFIG_FILE: 3.config
-  DIY_P1_SH: diy-part1.sh
+  DIY_P1_SH: 3-1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
@@ -111,7 +111,7 @@ jobs:
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
-        make -j$(nproc) || make -j1 V=s
+        make -j$(nproc) || make -j1 V=99
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: 检查可用容量
